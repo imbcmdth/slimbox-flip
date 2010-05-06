@@ -97,8 +97,8 @@
 
 	/*
 		options:	Optional options object, see jQuery.slimbox()
-		linkMapper:	Optional function taking a link DOM element and an index as arguments and returning an array containing 2 elements:
-				the image URL and the image caption (may contain HTML)
+		linkMapper:	Optional function taking a link DOM element and an index as arguments and returning an array containing 3 elements:
+				the image URL, the image caption (may contain HTML), and an alternate image URL (for flip)
 		linksFilter:	Optional function taking a link DOM element and an index as arguments and returning true if the element is part of
 				the image collection that will be shown on click, false if not. "this" refers to the element that was clicked.
 				This function must always return true when the DOM element argument is "this".
