@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Slimbox 3-D Flip Test</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+		<script type="text/javascript" src="flip/jquery-ui.custom.min.js"></script>
+		<script type="text/javascript" src="flip/jquery.flip.custom.js"></script>
+<!--		<script type="text/javascript" src="src/autoload.js"></script> -->
+		<script type="text/javascript" src="src/slimbox2.js"></script>
+
+		<link href="css/slimbox2.css" type="text/css" rel="stylesheet" />
+
+		<script type="text/javascript">
+			$(window).ready(function(){
+				jQuery(function($) {
+					$("a[rel^='lightbox']").slimbox({counterText: "Album {x} of {y}", loop:true, counterFrontText:"", counterBackText:"(Back)", do3DFlip:true}, null, function(el) {
+						return (this == el) || ((this.rel.length > 8) && (this.rel == el.rel));
+					});
+				});
+			});
+		</script>
+		
+	</head>
+	<body>
+		<h1>Below is a magical mixture of <a href="http://jquery.com/">jQuery</a>, <a href="http://lab.smashup.it/flip/">Flip!</a>, and <a href="http://www.digitalia.be/software/slimbox2">Slimbox2</a></h1>
+		<h2>Cool Album Covers</h2> 
+		<a href="img/dirty_projectors_bitte_orca_0.jpg" title="Dirty Projectors, Bitte Orca" rel="lightbox[albumsA]"  rev="img/backCVR.jpg">
+			<img src="img/dirty_projectors_bitte_orca_0_thumb.jpg"/>
+		</a>
+		<a href="img/ironwine_0.jpg" rel="lightbox[albumsA]" title="Iron and Wine">
+			<img src="img/ironwine_0_thumb.jpg"/>
+		</a>
+		<a href="img/grizzly-bear-veckatimest1-550x550.jpg" rev="img/1257665179_bonus.jpg" title="Grizzly Bear Veckatimest" rel="lightbox[albumsA]">
+			<img src="img/grizzly-bear-veckatimest1-550x550_thumb.jpg"/>
+		</a>
+		<div>(<b>left</b>: has back cover, <b>middle</b>: nothing, <b>right</b>: differently sized alternate image)</div>
+		<h3>Instructions</h3>
+		<div>Click a thumbnail to open the full-sized image into a lightbox. An album cover with a back available will have <img src="slimbox/css/fliplabel.gif"/> in the info area below. Click on that icon to "Flip" the album cover over.</div>
+	</body>
+</html>
