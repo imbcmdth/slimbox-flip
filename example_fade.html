@@ -9,7 +9,24 @@
 		<script type="text/javascript" src="src/slimbox2.js"></script>
 
 		<link href="css/slimbox2.css" type="text/css" rel="stylesheet" />
-
+		<style>
+			code .tag {
+				color:#A00;
+				font-weight:bold;
+			}
+			code .attribute {
+				color:#007;
+				font-weight:bold;
+			}
+			code .data {
+				color:#050;
+				font-weight:bold;
+			}
+			code .comment {
+				color:#555;
+				font-style:italic;
+			}			
+		</style>
 		<script type="text/javascript">
 			$(window).ready(function(){
 				jQuery(function($) {
@@ -23,18 +40,57 @@
 	</head>
 	<body>
 		<h1>Below is a simple mixture of <a href="http://jquery.com/">jQuery</a>, and <a href="http://www.digitalia.be/software/slimbox2">Slimbox2</a></h1>
-		<h2>Cool Album Covers</h2> 
-		<a href="img/dirty_projectors_bitte_orca_0.jpg" title="Dirty Projectors, Bitte Orca" rel="lightbox[albumsA]"  rev="img/backCVR.jpg">
-			<img src="img/dirty_projectors_bitte_orca_0_thumb.jpg"/>
+		<h2>Sample Album Flippers</h2> 
+		
+		<a 
+			href="img/NIN_TheDayTheWorldWentAway_front.jpg" 
+			rev="img/NIN_TheDayTheWorldWentAway_back.jpg"
+			title="Nine Inch Nails, The Day The World Went Away"
+			rel="lightbox[albumsA]">
+		<img src="img/NIN_TheDayTheWorldWentAway_thumb.jpg"/>
 		</a>
-		<a href="img/ironwine_0.jpg" rel="lightbox[albumsA]" title="Iron and Wine">
-			<img src="img/ironwine_0_thumb.jpg"/>
+
+		<a 
+			href="img/TMBG_Flood_front.jpg" 
+			rev="img/TMBG_Flood_back.jpg"
+			title="They Might Be Giants, Flood"
+			rel="lightbox[albumsA]">
+		<img src="img/TMBG_Flood_thumb.jpg"/>
 		</a>
-		<a href="img/grizzly-bear-veckatimest1-550x550.jpg" rev="img/1257665179_bonus.jpg" title="Grizzly Bear Veckatimest" rel="lightbox[albumsA]">
-			<img src="img/grizzly-bear-veckatimest1-550x550_thumb.jpg"/>
+
+		<a 
+			href="img/dirty_projectors.jpg" 
+			rev="img/dirty_projectors_back.jpg"
+			title="Dirty Projectors, Bitte Orca"
+			rel="lightbox[albumsA]">
+		<img src="img/dirty_projectors_thumb.jpg"/>
 		</a>
+		
+		<a 
+			href="img/The_Magnetic_Zeros_Up_From_Below_front.jpg" 
+			rev="img/The_Magnetic_Zeros_Up_From_Below_back.jpg"
+			title="Edward Sharpe and the Magnetic Zeros, Up from Below"
+			rel="lightbox[albumsA]">
+		<img src="img/The_Magnetic_Zeros_Up_From_Below_thumb.jpg"/>
+		</a>
+
 		<div>(<b>left</b>: has back cover, <b>middle</b>: nothing, <b>right</b>: differently sized alternate image)</div>
 		<h3>Instructions</h3>
-		<div>Click a thumbnail to open the full-sized image into a lightbox. An album cover with a back available will have <img src="slimbox/css/fliplabel.gif"/> in the info area below. Click on that icon to cross-fade from the front cover to the back.</div>
+		<div>Click a thumbnail to open the full-sized image into a lightbox. An album cover with a back available will have <img src="css/fliplabel.gif"/> in the info area below. Click on that icon to "Flip" the album cover over.</div>
+		<h3>Contribute</h3>
+		<div>Fork <a href="http://github.com/imbcmdth/slimbox-flip">Slimbox-flip@github</a>!</div>
+		<h3>How It Works</h3>
+		<p>If you drop this script into a page that already uses Slimbox2, it will continue to function exactly as before. The new "flip" feature is only triggered on anchor tags with a <i>rev="...url.."</i> attribute. That means the HTML is still 100% valid markup since we utilize an existing and valid attribute for our purposes.</p>
+		<h3>Example Anchor</h3>
+		<code>		
+			&lt;<span class="tag">a</span> <span class="comment">&lt;!-- Start of (A)nchor Tag --&gt;</span>
+			<br><span class="attribute">href</span>="<span class="data">img/dirty_projectors.jpg</span>" <span class="comment">&lt;!-- Required. <b>HREF</b> is the main image to be displayed in the lightbox --&gt;</span>
+			<br><span class="attribute">rev</span>="<span class="data">img/dirty_projectors_back.jpg</span>" <span class="comment">&lt;!--  Optional. <b>REV</b> is the flip-side (or REVerse) image to be displayed in the lightbox on "Flip" --&gt;</span>
+			<br><span class="attribute">title</span>="<span class="data">Dirty Projectors, Bitte Orca</span>"  <span class="comment">&lt;!-- Optional. <b>TITLE</b> to display for this image. --&gt;</span>
+			<br><span class="attribute">rel</span>="<span class="data">lightbox[albumsA]</span>"&gt;  <span class="comment">&lt;!-- Required (for Slimbox2 functionality.) <b>REL</b> is set to "lightbox" to bind Slimbox2 to this anchor. The text inside the []s tells Slimbox which gallery (albumsA in this case) this image belongs in --&gt;</span>
+			<br>&lt;<span class="tag">img</span> <span class="attribute">src</span>="<span class="data">img/dirty_projectors_thumb.jpg</span>"/&gt; <span class="comment">&lt;!-- Optional. This is the thumbnail to display --&gt;</span>
+			<br>&lt;<span class="tag">/a</span>&gt; <span class="comment">&lt;!-- End of (A)nchor Tag --&gt;</span>
+		</code>
+		</a>
 	</body>
 </html>
